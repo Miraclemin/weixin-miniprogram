@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/lecture/index",
+    "pages/my/index",
+    "pages/index/index",
+    "pages/lecture/info",
+    "pages/lecture_res/index",
+    "pages/my/edit_info",
+    "pages/my/order_list",
+    "pages/my/order_info",
+    "pages/my/comment",
+    "pages/my/commentList"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/lecture/index",
+        "iconPath": "images/nav/home-off1.png",
+        "selectedIconPath": "images/nav/home-on1.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/lecture_res/index",
+        "iconPath": "images/nav/cart-off1.png",
+        "selectedIconPath": "images/nav/cart-on1.png",
+        "text": "预约"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off1.png",
+        "selectedIconPath": "images/nav/my-on1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

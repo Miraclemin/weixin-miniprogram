@@ -1,0 +1,71 @@
+{% extends "common/layout_main.html" %}
+{% block content %}
+<div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            
+                            <h5>讲座数</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{{ data.order.count }}</h1>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            
+                            <h5>学生数</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{{ data.member.count}}</h1>
+                         
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            
+                            <h5>讲座类数</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{{ data.cat.count }}</h1>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            
+                            <h5>学生评论数</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{{ data.cart.count}}</h1>
+                         
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+
+
+
+       
+        </div>
+{% endblock %}
+{% block js %}
+<script src="{{ buildStaticUrl('/plugins/highcharts/highcharts.js') }}"></script>
+<script src="{{ buildStaticUrl('/js/chart.js') }}"></script>
+<script src="{{ buildStaticUrl('/js/index/index.js') }}"></script>
+{% endblock %}

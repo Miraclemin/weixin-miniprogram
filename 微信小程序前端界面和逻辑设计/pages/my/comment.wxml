@@ -1,0 +1,19 @@
+<view class="container">
+<view class="goods-list">
+    <view class="btn-row">
+      <view class="section section_gap">
+        <view style="margin-top:35rpx;margin-bottom:35rpx;color:#aaa">评价：</view>
+        <radio-group name="score" bindchange="scoreChange">
+          <label style="margin-right:35rpx;"><radio value="10" checked/>很有收获</label>
+          <label style="margin-right:35rpx;"><radio value="6"/>基本可以</label>
+          <label style="margin-right:35rpx;"><radio value="0"/>听不太懂</label>
+        </radio-group>
+      </view>
+          <view class="row-label" style="margin-top:35rpx;color:#aaa">总结内容</view>
+    </view>
+    <form bindsubmit="doComment">
+    <textarea placeholder="总结字数不要超过1000字～" maxlength="-1" auto-height="true" style="margin-top:35rpx;margin-left:35rpx;" name="content" value="{{content}}"/>
+    <button form-type="submit" size="default" style="width:100%;color:#03942e"> 提交总结 </button>
+      </form>
+</view>
+</view>

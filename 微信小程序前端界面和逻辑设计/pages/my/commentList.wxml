@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="comment-list">
+        <view class="a-order" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item">
+            <view class="order-date">
+                <view class="date-box">讲座主题：{{item.name}}</view>
+            </view>
+            <view class="goods-info">
+                <view class="goods-des">
+                  <view>主讲人：{{item.speaker}} </view>
+                  <view class="goods-des-info" style="margin-top:0rpx">
+                  <view class="label-title">我的总结</view>
+                  <view class="goods-text">
+                  <view>{{item.content}}</view>
+                  </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

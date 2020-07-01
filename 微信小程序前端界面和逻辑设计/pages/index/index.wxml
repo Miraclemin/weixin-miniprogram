@@ -1,0 +1,31 @@
+<!--start.wxml-->
+
+
+<view class="container">
+<image class='weather-bg'  src='/images/more/XR.png'></image>
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/images/more/loading.gif"></image>
+  </view>
+ 
+  <block wx:else>
+    <image class="title" src="/images/more/123.png"></image>
+    <image class="title2" src="/images/more/456.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="/images/more/logo1.png"></image>
+        
+      </view>
+      <view class="bd">
+        <view class="confirm-btn" bindtap='goToIndex' wx:if="{{regFlag==true}}">
+          <text>探索</text>
+        </view>
+
+        <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}">
+            登陆
+        </button>
+
+        <text class="copyright">@Little Prince B612</text>
+      </view>
+    </view>
+  </block>
+</view>

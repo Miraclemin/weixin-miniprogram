@@ -1,0 +1,55 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container">
+    <view class="sec-wrap">
+        <view class="order-status">
+            <view class="icon-box">
+                <image wx:if="{{info.status== 0}}" class="icon" src="/images/order/icon-ddgb.png"></image>
+                
+                <image wx:elif="{{info.status== 1 || info.status== -5}}" class="icon" src="/images/order/icon-jycg.png"></image>
+            </view>
+            <view class="right-text">
+                <view class="status red">{{info.status_desc}}</view>
+                <view class="des">请及时对讲座评价，可以拿到学分</view>
+            </view>
+        </view>
+    </view>
+    <view class="goods-list">
+        <view class="list-title">讲座信息</view>
+            <block>
+                <view class="a-goods">
+                    <view class="img-box">
+                      <image src="{{info.pic_url}}" class="img" />
+                    </view>
+                </view>
+            </block>
+    </view>
+    <view class="goods-info">
+        <view class="row-box">
+            <view class="row-label">讲座名称</view>
+            <view class="right-text"> {{info.name}}</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">演讲人</view>
+            <view class="right-text">{{info.speaker}}</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">讲座时间</view>
+            <view class="right-text">{{info.lecture_time}}</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">讲座地点</view>
+            <view class="right-text">{{info.speaker_address}}</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">关键词</view>
+            <view class="right-text">{{info.tags}}</view>
+        </view>
+        <view class="goods-des-info" style="margin-top:0rpx">
+        <view class="label-title">讲座描述</view>
+        <view class="goods-text">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+         </view>
+    </view>
+    </view>
+    
+</view>

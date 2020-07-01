@@ -1,0 +1,80 @@
+{% extends "common/layout_main.html" %}
+{% block content %}
+{% include "common/tab_food.html" %}
+<style type="text/css">
+    .wrap_info img {
+        width: 70%;
+    }
+</style>
+<div class="row m-t wrap_info">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="m-b-md">
+                    <a class="btn btn-outline btn-primary pull-right" href="{{ buildUrl('/food/set') }}?id={{ info.id }}">
+                        <i class="fa fa-pencil"></i>编辑
+                    </a>
+                    <h2>讲座信息</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="m-t">讲座主题：{{ info.name }}</p>
+                <p>主讲人：{{ info.speaker }}</p>
+                <p>讲座地址：{{ info.speaker_address }}</p>
+                <p>讲座时间：{{ info.lecture_time }}</p>
+                <p>关键词：{{ info.tags }}</p>
+                <p>封面图：<img src="{{ buildImageUrl( info.main_image ) }}" style="width: 50px;height: 50px;"></p>
+                <p>描述：</p>
+                <p>{{ info.summary | safe }}</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="row m-t">
+            <div class="col-lg-12">
+                <div class="panel blank-panel">
+                    <div class="panel-heading">
+                        <div class="panel-options">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab-1" data-toggle="tab" aria-expanded="false">总结</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-1">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>学生名称</th>
+                                        <th>学生总结</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% if comment %}
+                                    {% for item in comment %}
+                                        <tr>
+                                        <td>{{ item.nickname }}</td>
+                                        <td>{{ item.comment }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="2">暂无总结</td>
+                                    </tr>
+                                    {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

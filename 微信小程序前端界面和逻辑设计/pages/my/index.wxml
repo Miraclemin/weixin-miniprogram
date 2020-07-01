@@ -1,0 +1,27 @@
+<view class="container">
+	<view class="userinfo">
+		<image wx:if="{{user_info && user_info.avatar_url}}" class="userinfo-avatar" src="{{ user_info.avatar_url }}" background-size="cover"></image>
+		<text class="userinfo-nickname" wx:if="{{regFlag==true}}">{{ user_info.nickname }}</text>
+    <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}">
+            用户登陆
+        </button>
+	</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item">
+    <navigator url="/pages/my/edit_info" hover-class="navigator-hover">绑定学号(TBSI)</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/my/order_list" hover-class="navigator-hover">我的讲座</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/my/commentList" hover-class="navigator-hover">我的总结</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/index/index" hover-class="navigator-hover">关于 B612 </navigator>
+  </view>
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="version">Right@Little Prince</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+
+</view>

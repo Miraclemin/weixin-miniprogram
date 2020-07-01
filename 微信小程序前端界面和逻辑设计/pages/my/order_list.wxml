@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            {{item}}
+            <view class="{{tabClass[index]}}"></view>
+        </view>
+    </view>
+    <view class="no-order" wx:if="{{!order_list.length}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无讲座</view>
+    </view>
+    <view class="order-list" wx:if="{{order_list.length}}">
+        <view class="a-order" wx:for="{{order_list}}" wx:key="{{index}}" wx:for-item="item">
+
+            <view class="order-date" data-id="{{item.id}}" bindtap="orderDetail">
+                <view class="date-box">讲座时间：{{item.lecture_time}}</view>
+                <view class="status {{(item.status==0 || item.status==1) ? '':'red'}}">{{item.status_desc}}</view>
+            </view>
+            <view class="goods-info"  data-id="{{item.id}}" bindtap="orderDetail">
+                <view class="goods-des">
+                   <view>讲座主题: {{item.goods_list.name}} </view>
+                   <view>{{item.speaker}}  {{item.speaker_address}}</view>
+                   
+                </view>
+            </view>
+            <view data-id="{{item.id}}" bindtap="orderDetail">
+                <scroll-view class="goods-img-container" scroll-x="true">
+                     <view class="img-box">
+                         <image src="{{item.goods_list.pic_url}}" class="goods-img"></image>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="price-box">
+                <view class="btn cancel-btn" bindtap="orderCancel" data-id="{{item.id}}" wx:if="{{item.status==-5}}">取消讲座</view>
+                <view  wx:if="{{item.status==1}}">
+                <view class="goods-des-info" style="margin-top:0rpx">
+                  <view class="label-title">我的总结</view>
+                  <view class="goods-text">
+                  <view>{{item.content}}</view>
+                  </view>
+                  </view>
+                </view>
+                <view class="btn topay-btn" bindtap="orderComment" data-id="{{item.id}}" wx:if="{{item.status==-5}}">总结讲座</view>
+            </view>
+        </view>
+    </view>
+</view>
