@@ -4,7 +4,7 @@
 
 微信扫码查看
 
-[https://github.com/Miraclemin/weixin-miniprogram/blob/master/WechatIMG101.jpeg]
+![image](https://github.com/Miraclemin/weixin-miniprogram/blob/master/WechatIMG101.jpeg）
 
 结构：
 MVC+FLASK+mysql
