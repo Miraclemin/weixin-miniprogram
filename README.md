@@ -10,3 +10,5 @@
 MVC+FLASK+mysql
 
 数据库文件没有上传，需要可issue. 用sql-alchemy对数据库对象操作。
+
+## 欢迎star🌟
